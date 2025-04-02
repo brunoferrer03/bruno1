@@ -1,0 +1,1083 @@
+https://ieeexplore.ieee.org/document/1542014
+Protocolos de enrutamiento en MANETs​
+
+●​ Se dividen en dos tipos principales: basados en árboles (tree-based) y en mallas
+(mesh-based).​
+●​ Los protocolos basados en árboles estructuran la red de manera jerárquica, con un
+solo camino de reenvío de datos. Son eficientes en ancho de banda, pero
+vulnerables a fallos de nodos.​
+●​ Los protocolos basados en mallas crean múltiples rutas redundantes, lo que
+aumenta la robustez a fallos, pero con mayor sobrecarga de control.​
+
+Protocolos específicos analizados​
+
+●​ MAODV (Multicast Ad hoc On-Demand Distance Vector): Usa una estructura en
+árbol y descubre rutas bajo demanda. Reduce el uso de ancho de banda, pero es
+menos tolerante a fallos.​
+●​ ODMRP (On-Demand Multicast Routing Protocol): Un protocolo basado en mallas
+que mantiene redundancia y mejora la entrega de paquetes en redes móviles.
+Aumenta la carga de control debido a la duplicación de paquetes.​
+●​ CAMP (Core-Assisted Mesh Protocol): Usa una estructura híbrida con nodos
+centrales que optimizan la difusión de información en la malla.​
+
+Retos futuros de los protocolos MANET​
+
+●​ Escalabilidad: A medida que aumenta el número de nodos, la sobrecarga de control
+y la latencia pueden volverse problemáticas.​
+●​ Eficiencia energética: La movilidad y los protocolos de enrutamiento deben
+equilibrarse para reducir el consumo energético.​
+●​ Seguridad: MANETs son vulnerables a ataques como enrutamiento falso, inyección
+de paquetes maliciosos y ataques de denegación de servicio.​
+●​ Robustez ante fallos: Los protocolos deben mejorar en adaptabilidad y tolerancia a
+interrupciones en la conectividad.
+
+https://www.sciencedirect.com/science/article/pii/S1570870509000791
+
+1. Problemas de las MANETs
+Las redes MANETs presentan una serie de desafíos que afectan su rendimiento y su
+aplicación en escenarios como desastres naturales:
+●​ Alta movilidad y cambios en la topología:​
+Debido a la naturaleza de las MANETs, los nodos pueden moverse de manera
+constante, lo que provoca cambios frecuentes en la topología de la red. Esto dificulta
+el mantenimiento de rutas de comunicación estables y requiere algoritmos de
+enrutamiento adaptativos que puedan reaccionar rápidamente a estos cambios.​
+●​ Consumo de energía:​
+En un entorno donde los nodos suelen ser dispositivos móviles (por ejemplo,
+teléfonos, drones, sensores, etc.), la energía es un recurso limitado. Las estrategias
+de enrutamiento deben considerar la eficiencia energética para prolongar la vida útil
+de la red, ya que una mala gestión de la energía podría llevar a la desconexión de
+nodos clave.​
+●​ Ancho de banda limitado:​
+A diferencia de las redes con infraestructura fija, las MANETs dependen de enlaces
+inalámbricos que pueden tener menor capacidad y sufrir interferencias. El
+rendimiento de la red puede degradarse rápidamente con el aumento del tráfico o
+con la presencia de múltiples retransmisiones de paquetes.​
+●​ Seguridad y vulnerabilidades:​
+Dado que las MANETs no tienen una infraestructura centralizada, presentan varios
+problemas de seguridad. Son vulnerables a ataques como la manipulación de rutas,
+la suplantación de identidad y la inyección de paquetes maliciosos. Además, la
+autenticación y el cifrado en estas redes son más complejos debido a su carácter
+descentralizado.​
+●​ Escalabilidad:​
+A medida que el número de nodos en la red crece, la sobrecarga en la señalización
+y la gestión del enrutamiento se vuelven más problemáticas. Protocolos que
+funcionan bien en redes pequeñas pueden no ser eficientes en redes de mayor
+escala.
+
+3. Retos futuros
+El documento menciona varios desafíos que deben resolverse para mejorar la viabilidad de
+las MANETs en el futuro:
+●​ Optimización de protocolos de enrutamiento:​
+Actualmente, los protocolos existentes deben mejorar su capacidad para reaccionar
+a cambios rápidos en la red sin generar una sobrecarga de señalización. Se
+
+investiga en algoritmos basados en inteligencia artificial que puedan predecir
+cambios en la topología y ajustar las rutas de manera más eficiente.​
+●​ Seguridad y privacidad:​
+Las MANETs necesitan mecanismos más robustos de autenticación y cifrado ligero
+que no sobrecarguen la red. Soluciones basadas en blockchain o en firmas digitales
+podrían ser una opción para mejorar la confianza entre nodos sin necesidad de una
+autoridad central.​
+●​ Escalabilidad y rendimiento:​
+A medida que las MANETs crecen en número de nodos, su rendimiento tiende a
+degradarse. Es necesario desarrollar estrategias de gestión de recursos más
+eficientes para evitar colisiones de paquetes y congestión en los enlaces
+inalámbricos.
+
+Redes DTN (Delay-Tolerant Networks)
+Las DTN (Delay-Tolerant Networks) son un tipo de red diseñada para operar en entornos
+donde la conectividad es intermitente o donde las demoras en la transmisión de datos son
+elevadas. Estas redes surgieron como una evolución de las MANETs para hacer frente a
+escenarios donde las conexiones son inestables y donde las rutas de comunicación no
+siempre están disponibles.
+Imagínate que quieres enviarle un mensaje a un amigo que está en una isla desierta, pero no hay internet, ni redes móviles, ni WiFi.
+lo haces?
+
+🤯 ¿Cómo
+
+Bueno, en una red normal (como WhatsApp o una llamada), el mensaje viaja instantáneamente a través de antenas, cables o satélites hasta
+llegar a tu amigo. Pero en una DTN (Delay-Tolerant Network), como no hay conexión directa, el mensaje viaja poco a poco, saltando de un
+"mensajero" a otro, hasta que llega al destino.
+
+🔄 El método "Almacenar, Transportar y Reenviar" ("Store-Carry-Forward")
+Aquí es donde la magia ocurre: en lugar de fallar cuando no hay conexión, la DTN almacena los mensajes hasta que pueda enviarlos más
+adelante.
+
+💡 Ejemplo simple:
+1️⃣ Tú escribes una carta y se la das a un viajero en barco.​
+2️⃣ El viajero guarda la carta en su mochila porque aún no ha llegado a la isla.​
+3️⃣ Cuando el barco se acerca a otro viajero en una lancha, le pasa la carta.​
+4️⃣ Este proceso se repite hasta que alguien llega a la isla y entrega la carta a tu amigo.
+
+📩
+
+En una DTN, en vez de viajeros y cartas, los "mensajeros" son dispositivos como teléfonos, drones, satélites o autos, y los mensajes son
+paquetes de datos que viajan hasta su destino, incluso si hay largos retrasos en el camino.
+
+1. Características de las DTN
+A diferencia de las redes tradicionales, que asumen una conectividad constante, las DTN
+están diseñadas para trabajar en entornos con:
+
+●​ Altas latencias: Puede haber retrasos significativos en la entrega de los paquetes
+debido a la falta de una ruta continua de extremo a extremo.​
+●​ Desconexiones frecuentes: No siempre hay un camino directo entre emisor y
+receptor, lo que obliga a almacenar y reenviar datos cuando sea posible.​
+●​ Recursos limitados: Suelen operar en entornos con restricciones de ancho de
+banda, energía y almacenamiento.​
+●​ Movilidad extrema: Muchos nodos pueden estar en movimiento constante, lo que
+hace que las rutas sean impredecibles.​
+
+2. Cómo funcionan las DTN
+Para superar estos desafíos, las DTN emplean un enfoque llamado "Store-Carry-Forward"
+(Almacenar, Transportar y Reenviar). En lugar de descartar paquetes cuando no hay una
+ruta disponible, los nodos intermedios los almacenan temporalmente hasta que se
+restablezca la conectividad y puedan ser reenviados.
+
+📌 Ejemplo: Imagina que un nodo en un dron recoge datos en una zona sin conectividad.
+Cuando el dron se acerca a una estación base, transfiere los datos acumulados para su
+procesamiento.
+El protocolo más utilizado en DTN es el Bundle Protocol (BP), que introduce una capa
+intermedia llamada "capa de paquetes" que gestiona el almacenamiento y reenvío de
+datos de manera tolerante a demoras.
+
+3. Aplicaciones de las DTN
+Las DTN se han implementado en una variedad de entornos extremos donde las redes
+tradicionales no pueden operar de manera eficiente:
+●​ Misiones espaciales: La NASA ha usado DTN en el proyecto Interplanetary
+Internet, donde las comunicaciones entre satélites y sondas espaciales pueden
+tardar varios minutos o incluso horas en llegar.​
+●​ Redes de sensores en zonas remotas: Se utilizan para monitoreo ambiental en
+áreas sin infraestructura de comunicación.​
+●​ Comunicaciones en desastres naturales: Pueden facilitar la comunicación cuando
+la infraestructura ha colapsado, permitiendo el envío de mensajes entre equipos de
+rescate.​
+
+●​ Redes vehiculares (VANETs): Permiten la transmisión de datos entre vehículos en
+movimiento, especialmente en zonas donde la cobertura celular es deficiente.​
+
+4. Diferencias entre DTN y MANETs
+Aunque las DTN y las MANETs comparten algunas características, existen diferencias
+clave:
+Característica
+
+MANETs
+
+DTN
+
+Conectividad
+
+Requieren rutas disponibles en
+el momento de la transmisión.
+
+Pueden operar sin una conexión
+en tiempo real.
+
+Manejo de
+interrupciones
+
+No toleran desconexiones
+prolongadas.
+
+Diseñadas para soportar
+interrupciones en la red.
+
+Latencia
+
+Baja o moderada.
+
+Alta, debido al almacenamiento y
+reenvío de paquetes.
+
+Aplicaciones
+típicas
+
+Redes tácticas, militares, IoT
+móvil.
+
+Misiones espaciales, zonas
+remotas, comunicaciones
+post-desastre.
+
+Digo que las DTN tienen alta latencia porque los datos no viajan de inmediato al destino, sino que pueden
+quedarse "esperando" en un nodo intermedio hasta que haya una oportunidad de enviarlos.
+
+5. Retos futuros de las DTN
+A pesar de sus ventajas, las DTN enfrentan desafíos que deben resolverse para mejorar su
+eficiencia y adopción:
+●​ Gestión eficiente del almacenamiento: Dado que los nodos deben almacenar
+datos hasta que puedan reenviarlos, se requieren mejores estrategias para evitar el
+agotamiento de memoria.​
+●​ Optimización de protocolos: Aunque el Bundle Protocol (BP) es el estándar
+actual, se están investigando nuevos enfoques para reducir la latencia y mejorar la
+entrega de paquetes.​
+●​ Interoperabilidad con redes existentes: Integrar DTN con redes convencionales
+como 5G o WiFi para mejorar la cobertura y la eficiencia en escenarios mixtos.​
+●​ Seguridad: Dado que los datos pueden permanecer almacenados en un nodo
+durante un tiempo prolongado, es crucial garantizar su protección contra accesos no
+autorizados o manipulaciones.
+
+Conclusión
+Las DTN representan una solución efectiva para entornos donde la conectividad no puede
+garantizarse en todo momento. Su enfoque de "Store-Carry-Forward" las hace ideales
+para escenarios como misiones espaciales, redes en zonas rurales, comunicaciones en
+desastres y redes vehiculares. Sin embargo, aún hay retos en términos de eficiencia,
+interoperabilidad y seguridad que deben abordarse para maximizar su potencial.
+
+https://ieeexplore.ieee.org/document/8984063
+El documento analiza la mejora de protocolos de enrutamiento en Redes Mesh
+Inalámbricas (WMN), que comparten similitudes con MANETs. Se enfoca en la agregación
+de paquetes para mejorar la eficiencia del enrutamiento, reduciendo el overhead y la
+latencia en la transmisión de datos. Esto es relevante porque un buen protocolo de
+enrutamiento es clave en redes MANETs para garantizar la entrega eficiente de mensajes
+en entornos sin infraestructura establecida
+
+BATMAN-Adv (Better Approach To Mobile Ad-hoc Networking Advanced) es un
+protocolo de enrutamiento diseñado para redes ad-hoc y redes mesh inalámbricas
+(WMN). Es la versión avanzada de BATMAN, pero a diferencia de su predecesor,
+BATMAN-Adv opera en la capa 2 (enlace de datos) en lugar de la capa de red.
+Esto significa que se comporta como un switch distribuido en lugar de un router
+tradicional, lo que facilita la transmisión de paquetes entre nodos sin necesidad de
+modificar la configuración IP.
+¿Cómo funciona BATMAN-Adv?
+1.​ Difusión de paquetes OGMs (Originator Messages)​
+○​ Cada nodo envía periódicamente mensajes OGMs a sus vecinos.​
+○​ Los OGMs contienen información sobre la calidad del enlace y se propagan
+en la red.​
+2.​ Selección de rutas​
+○​ Los nodos analizan la cantidad de OGMs recibidos desde diferentes caminos
+y seleccionan la mejor ruta basada en la calidad del enlace.​
+○​ No se calcula una ruta completa de antemano como en protocolos como
+AODV, sino que cada nodo solo conoce su siguiente salto óptimo.​
+
+3.​ Transmisión de datos​
+○​ Los paquetes de datos se envían utilizando la mejor ruta determinada
+dinámicamente a través de OGMs.​
+○​ Como BATMAN-Adv opera en la capa 2, los paquetes viajan como si todos
+los nodos estuvieran en una única LAN distribuida.​
+
+4. ¿Es BATMAN-Adv útil para tu TFG?
+
+✅ Sí, porque:
+
+●​ Es un protocolo diseñado para redes sin infraestructura, ideal para escenarios donde
+las redes están caídas por desastres naturales.​
+●​ Se autoorganiza y permite la comunicación sin necesidad de servidores centrales.​
+●​ Reduce la sobrecarga de reconfiguración, ya que no depende de direcciones IP.
+●​ No es ideal para redes con movilidad extrema (como vehículos de emergencia en
+movimiento), ya que fue diseñado más para redes mesh estáticas.​
+●​ La latencia puede aumentar en redes grandes, ya que BATMAN-Adv no optimiza
+completamente el control de congestión.​
+
+Conclusión
+Si tu aplicación para desastres naturales usa nodos relativamente estáticos o con movilidad
+limitada, BATMAN-Adv puede ser una opción viable. Sin embargo, si necesitas soporte
+para movilidad alta, podrías considerar AODV o DSR, que están diseñados para entornos
+MANET altamente dinámicos
+Qussai M. Yaseen,Monther Aldwairi. An Enhanced AODV Protocol for Avoiding Black Holes
+in MANET[J]. Procedia Computer Science,2018,134.
+Qussai M. Yaseen,Monther Aldwairi. An Enhanced AODV Protocol for Avoiding Black Holes
+in MANET[J]. Procedia Computer Science,2018,134
+
+dsr,aodv y dnt, aoslr
+
+https://ieeexplore.ieee.org/document/995315
+
+Puntos clave del protocolo OLSR
+1.​ Optimización de Enlaces: OLSR es un protocolo proactivo basado en el estado del
+enlace que optimiza la difusión de información para reducir la sobrecarga en la red.​
+2.​ Multipoint Relays (MPRs): Utiliza nodos seleccionados (MPRs) para reenviar
+mensajes de control, lo que disminuye la redundancia y mejora la eficiencia.​
+3.​ Enrutamiento sin infraestructura: OLSR es ideal para redes ad hoc, lo que lo hace
+útil en escenarios de desastres donde la infraestructura de red está caída.​
+4.​ Baja latencia: Al mantener información actualizada sobre la topología, permite una
+rápida convergencia de rutas, crucial en situaciones de emergencia.​
+5.​ Uso en MANETs: Se implementa en redes móviles ad hoc (MANETs), que permiten
+la comunicación en ausencia de redes tradicionales.
+
+1. Protocolos de Enrutamiento en MANETs
+●​ Clasificación: El documento destaca que los protocolos de enrutamiento en
+MANETs pueden ser proactivos, reactivos o híbridos.​
+●​ OLSR como protocolo proactivo:​
+○​ Mantiene información de enrutamiento constantemente actualizada.​
+○​ Usa una estructura eficiente para reducir la sobrecarga de mensajes de
+control en la red.​
+○​ Es adecuado para entornos de alta movilidad y redes densas.​
+●​ Comparación con protocolos reactivos como AODV o DSR:​
+○​ OLSR tiene baja latencia porque las rutas ya están preestablecidas.​
+○​ Consume más ancho de banda debido a la actualización continua de rutas, a
+diferencia de AODV o DSR, que crean rutas solo cuando son necesarias.​
+
+2. Retos y Desafíos de OLSR y MANETs en Redes Caídas
+El documento menciona algunos desafíos clave que son importantes para tu TFG:
+
+●​ Escalabilidad: OLSR funciona bien en redes pequeñas y medianas, pero su
+rendimiento disminuye en redes grandes debido a la sobrecarga de mensajes de
+control.​
+●​ Consumo energético: Los mensajes de actualización constante pueden agotar la
+batería de los dispositivos móviles más rápido que en protocolos bajo demanda.​
+●​ Robustez en entornos de desastre: OLSR depende de una buena selección de
+nodos Multipoint Relays (MPRs) para optimizar la difusión de paquetes, pero si los
+nodos clave fallan, la red puede volverse inestable.​
+●​ Adaptabilidad: En escenarios de emergencia, la red cambia rápidamente. OLSR
+puede requerir ajustes para reaccionar mejor a cambios rápidos en la topología.
+
+🔹 ¿Cómo funciona OLSR?
+
+OLSR es un protocolo de enrutamiento proactivo para redes MANETs, lo que significa
+que mantiene rutas actualizadas en todo momento sin necesidad de descubrirlas cuando
+se necesitan.
+1️⃣ Descubrimiento de vecinos: Cada nodo envía mensajes de HELLO para detectar con
+quién está conectado.​
+2️⃣ Selección de MPRs (Multipoint Relays): Algunos nodos son elegidos para retransmitir
+mensajes y reducir el tráfico innecesario.​
+3️⃣ Difusión de información de enrutamiento: Los MPRs envían mensajes de control (TC)
+para informar sobre las rutas disponibles.​
+4️⃣ Cálculo de rutas: Cada nodo usa la información recopilada para encontrar la mejor ruta
+usando el algoritmo de Dijkstra.​
+5️⃣ Envío de datos: Cuando un nodo quiere enviar información, usa la ruta más corta
+basada en los datos ya almacenados.
+
+Buena pregunta. Cuando digo que OLSR tiene rutas preestablecidas, me refiero a que
+cada nodo mantiene y actualiza constantemente una tabla de rutas, incluso si no hay
+tráfico de datos en ese momento.
+
+🔹 ¿Qué pasa cuando todo está caído?​
+
+Si las redes tradicionales (como 4G, 5G o Wi-Fi) están caídas, OLSR crea una nueva red
+ad hoc con los dispositivos disponibles.
+1️⃣ Los nodos empiezan a enviarse mensajes HELLO para descubrir quiénes están cerca.​
+2️⃣ Se eligen algunos nodos como MPRs (Multipoint Relays), que serán los encargados
+de retransmitir información a más distancia.​
+3️⃣ Cada nodo construye su tabla de enrutamiento en función de los MPRs y otros
+nodos cercanos.​
+4️⃣ Cuando alguien quiere enviar un mensaje, la red ya tiene información de quién
+puede transmitirlo más rápido.
+
+📌 Entonces, aunque no haya una red previa, OLSR rápidamente genera una nueva
+estructura de comunicación sin depender de antenas o servidores centrales.
+
+💡 Ejemplo práctico en un desastre natural:​
+🔥 Un equipo de bomberos llega a una zona sin cobertura.​
+📡 Sus radios y móviles usan OLSR para descubrir otros dispositivos cercanos y
+formar una red ad hoc.​
+🔗 En minutos, ya pueden enviarse mensajes entre sí sin necesidad de internet.
+En resumen, aunque la infraestructura esté caída, OLSR ayuda a crear una nueva red
+local de forma automática y mantiene la información de rutas actualizada todo el tiempo,
+permitiendo que los mensajes lleguen de un punto a otro sin interrupciones.
+
+1.​ OLSR:
+○​ Es un protocolo proactivo (table-driven), lo que significa que mantiene
+información de rutas constantemente actualizada mediante mensajes
+periódicos.
+○​ Diseñado para proporcionar rutas óptimas de forma inmediata, siendo
+especialmente eficiente en redes densas y de gran tamaño.
+○​ Utiliza Multipoint Relays (MPRs) para optimizar la difusión de mensajes y
+reducir el tráfico de control.
+2.​ AODV y DSR:
+○​ Son reactivos (on-demand), establecen rutas únicamente cuando son
+necesarias, lo que reduce el uso de ancho de banda en redes menos activas.
+○​ AODV: Utiliza descubrimiento de rutas basado en flooding para encontrar un
+camino al destino.
+○​ DSR: Emplea rutas fuente dinámicas, almacenando toda la información de
+ruta en los paquetes.
+3.​ Diferencias claves:
+○​ OLSR requiere mayor tráfico de control debido a su enfoque proactivo,
+mientras que AODV y DSR sacrifican velocidad inicial en el establecimiento
+de rutas para ahorrar ancho de banda.
+○​ Escalabilidad: OLSR está mejor adaptado a redes grandes y densas,
+mientras que AODV y DSR tienden a funcionar mejor en redes más
+pequeñas con menos movilidad.
+El documento destaca que OLSR es favorable en escenarios donde las rutas necesitan
+estar disponibles sin demora y las actualizaciones frecuentes no son un problema, mientras
+que AODV y DSR son más eficientes en redes dinámicas con menor actividad.
+
+1️⃣ Problemas de las MANETs en entornos dinámicos
+El documento identifica varios desafíos clave que podrías enfrentar al usar MANETs para
+comunicación en desastres:
+
+🔸 Altos niveles de cambio topológico:
+
+●​ Como los nodos se mueven constantemente, las rutas entre ellos pueden cambiar
+muy rápido. Esto puede hacer que algunos protocolos de enrutamiento no sean
+efectivos.​
+●​ Problema en tu caso: Si los dispositivos que forman tu MANET están en
+movimiento (por ejemplo, equipos de rescate o drones), algunas rutas pueden
+volverse inestables.​
+
+🔸 Pérdida de paquetes:
+●​ En MANETs, la interferencia y los cambios de ruta pueden hacer que los datos no
+lleguen correctamente.​
+●​ Problema en tu caso: En un escenario de desastre, donde los mensajes pueden
+ser críticos (coordenadas de rescate, alertas, etc.), perder datos es un riesgo
+importante.​
+
+🔸 Problemas de latencia:
+●​ Algunos protocolos tardan más en encontrar rutas eficientes, lo que provoca
+retrasos.​
+●​ Problema en tu caso: Si las comunicaciones no son rápidas, la efectividad de los
+equipos de emergencia se reduce.
+
+https://ieeexplore.ieee.org/document/5949158
+
+📌 AODV (Ad hoc On-Demand Distance Vector)
+🔍 ¿Cómo funciona?
+
+AODV es un protocolo reactivo, lo que significa que solo busca rutas cuando es
+necesario. Funciona en tres fases:
+1️⃣ Descubrimiento de Ruta
+●​ Cuando un nodo quiere enviar datos a otro nodo, pero no sabe cómo llegar, envía un
+mensaje llamado RREQ (Route Request).​
+●​ Este mensaje se transmite a través de la red hasta que encuentra un nodo con la
+información de la ruta correcta.​
+
+2️⃣ Respuesta de Ruta
+●​ Cuando el RREQ llega al destino o a un nodo que conoce la ruta, se envía un RREP
+(Route Reply) de vuelta al nodo de origen.​
+●​ Esto le permite al nodo emisor conocer la mejor ruta para enviar datos.​
+
+3️⃣ Mantenimiento de Ruta
+●​ Si una ruta se rompe (por ejemplo, si un nodo se mueve fuera de rango), se envía un
+mensaje RERR (Route Error) para avisar a los nodos involucrados.​
+●​ Luego, se inicia un nuevo descubrimiento de ruta.​
+
+📊 Ventajas y Desventajas del AODV según el documento
+
+✅ Ventajas​
+✔️ No mantiene información de rutas que no se usan, lo que ahorra memoria y ancho de
+banda.​
+✔️ Escalable, ya que los nodos solo almacenan rutas activas.​
+✔️ Funciona bien en redes altamente dinámicas (como en desastres naturales).
+❌ Desventajas​
+❌ Puede generar congestión en la red cuando hay muchas solicitudes de rutas
+
+❌
+❌
+
+simultáneas.​
+El tiempo para encontrar una ruta es mayor que en protocolos proactivos como OLSR.​
+Más propenso a ataques de seguridad, ya que confía en mensajes intercambiados sin
+verificación.
+
+📌 DSR (Dynamic Source Routing)
+🔍 ¿Cómo funciona?
+
+DSR es otro protocolo reactivo, pero con una diferencia clave: las rutas se incluyen
+dentro de cada paquete de datos.
+1️⃣ Descubrimiento de Ruta
+●​ Igual que AODV, un nodo envía un RREQ (Route Request) cuando necesita
+encontrar una ruta.​
+●​ Cada nodo que retransmite el mensaje añade su propia dirección a la cabecera
+del paquete.​
+
+2️⃣ Respuesta de Ruta
+●​ El nodo destino recibe el paquete y devuelve un RREP (Route Reply) con la ruta
+completa.​
+●​ Los nodos almacenan las rutas observadas para usarlas en el futuro sin necesidad
+de una nueva solicitud.​
+
+3️⃣ Mantenimiento de Ruta
+●​ Si una ruta falla, los nodos pueden buscar rutas alternativas desde su caché antes
+de hacer un nuevo descubrimiento de ruta.​
+
+📊 Ventajas y Desventajas del DSR según el documento
+
+✅ Ventajas​
+✔️ No necesita mantener tablas de enrutamiento constantemente.​
+✔️ Puede usar rutas almacenadas en caché, lo que reduce la sobrecarga de control en la
+red.​
+✔️ Mejor para redes de tamaño pequeño o moderado.
+❌ Desventajas​
+❌ El tamaño de los paquetes aumenta porque llevan información completa de la ruta.​
+❌ La latencia puede ser alta cuando una ruta falla y se necesita un nuevo descubrimiento.​
+❌ No escala bien en redes grandes con muchos nodos móviles.
+
+📊 Comparación de AODV vs. DSR en el documento
+
+🔹 AODV es mejor cuando hay cambios constantes en la red porque mantiene menos
+información en cada paquete y las rutas se descubren bajo demanda.​
+🔹 DSR es más eficiente en redes pequeñas o medianas, donde almacenar rutas en
+caché reduce el tráfico de control.​
+🔹 Ambos tienen problemas de latencia en redes muy dinámicas, pero AODV suele
+ser más estable en escenarios de movilidad alta.
+
+📌 ¿Cuál usar en tu caso?
+
+🔥 Para una red de emergencia en desastres naturales:​
+✅ AODV es la mejor opción, porque maneja mejor los cambios de topología y evita
+sobrecargar los paquetes con información de rutas.​
+✅ DSR puede ser útil si la red no cambia demasiado rápido, pero su mayor uso de
+caché y cabeceras largas lo hace menos eficiente en redes grandes y dinámicas.
+
+📌 1. AODV (Ad hoc On-Demand
+Distance Vector)
+
+📌 ¿Cómo funciona?
+
+AODV es un protocolo de enrutamiento reactivo, lo que significa que solo busca rutas
+cuando son necesarias. Utiliza un sistema de descubrimiento de rutas basado en mensajes
+de solicitud y respuesta:
+1️⃣ Descubrimiento de Ruta:
+●​ Cuando un nodo necesita enviar datos a otro, pero no conoce la ruta, emite un
+mensaje RREQ (Route Request).​
+●​ Este mensaje se propaga por la red hasta que alcanza el destino o un nodo que ya
+conoce la ruta.​
+
+2️⃣ Respuesta de Ruta:
+●​ Cuando el destino recibe el RREQ, responde con un RREP (Route Reply), que
+regresa por la misma ruta.​
+●​ Cada nodo en la ruta almacena la información para futuros envíos.​
+
+3️⃣ Mantenimiento de Ruta:
+●​ Si una ruta se rompe porque un nodo se mueve o se apaga, se envía un RERR
+(Route Error) a los nodos afectados.​
+●​ Luego, se inicia un nuevo descubrimiento de ruta.​
+
+📊 Ventajas de AODV
+
+✔️ Menor consumo de ancho de banda porque no mantiene información de rutas
+innecesarias.​
+✔️ Escalable, ya que solo almacena rutas activas.​
+✔️ Funciona bien en redes con alta movilidad.
+
+❌ Desventajas de AODV
+
+❌ Mayor latencia en el primer envío, ya que debe descubrir la ruta.​
+❌ Posible congestión de la red cuando hay muchas solicitudes de rutas simultáneamente.​
+❌ Vulnerable a ataques como el blackhole, donde un nodo malicioso finge conocer la
+mejor ruta y luego descarta los paquetes.
+
+📌 2. DSR (Dynamic Source Routing)
+📌 ¿Cómo funciona?
+
+DSR también es un protocolo reactivo, pero a diferencia de AODV, almacena las rutas
+completas en cada paquete en lugar de usar tablas de enrutamiento.
+1️⃣ Descubrimiento de Ruta:
+●​ Un nodo envía un mensaje RREQ (Route Request) a toda la red cuando necesita
+encontrar una ruta.​
+●​ Cada nodo que retransmite el mensaje añade su propia dirección en el paquete.​
+
+2️⃣ Respuesta de Ruta:
+●​ Cuando el nodo destino recibe el RREQ, devuelve un RREP (Route Reply) con la
+ruta completa.​
+●​ A partir de ahí, el nodo fuente puede enviar datos con la ruta exacta incluida en cada
+paquete.​
+
+3️⃣ Mantenimiento de Ruta:
+●​ Si una ruta falla, el nodo puede intentar otra almacenada en caché antes de buscar
+una nueva.​
+
+📊 Ventajas de DSR
+
+✔️ Reduce el tráfico de control porque los nodos pueden reutilizar rutas conocidas.​
+✔️ No necesita tablas de enrutamiento permanentes.​
+✔️ Útil en redes pequeñas con baja movilidad.
+
+❌ Desventajas de DSR
+
+❌ Las cabeceras de los paquetes son más grandes, lo que puede causar problemas en
+redes congestionadas.​
+
+❌ No escala bien en redes grandes porque la caché de rutas se llena rápido.​
+❌ Cuando hay cambios frecuentes en la topología, la caché de rutas puede quedar
+
+obsoleta y generar errores.
+
+📌 3. OLSR (Optimized Link State
+Routing)
+
+📌 ¿Cómo funciona?
+OLSR es un protocolo proactivo, lo que significa que mantiene rutas actualizadas
+constantemente, sin esperar a que se necesiten. Usa el concepto de Multipoint Relays
+(MPRs) para reducir la sobrecarga de mensajes.
+1️⃣ Intercambio de información:
+●​ Cada nodo transmite periódicamente mensajes de HELLO para descubrir vecinos y
+construir una tabla de enrutamiento.​
+●​ Algunos nodos son seleccionados como MPRs para reducir el número de
+retransmisiones en la red.​
+
+2️⃣ Difusión de rutas:
+●​ Los nodos MPRs envían actualizaciones de la topología a la red, asegurando que
+todos los nodos tengan información de rutas actualizada.​
+
+📊 Ventajas de OLSR
+
+✔️ Rutas siempre disponibles, sin necesidad de descubrimiento bajo demanda.​
+✔️ Mejor para redes grandes y densas con tráfico constante.​
+✔️ Reduce la latencia porque las rutas ya están establecidas.
+
+❌ Desventajas de OLSR
+
+❌ Mayor consumo de ancho de banda y batería debido a la actualización constante de
+rutas.​
+❌ Puede ser innecesario en redes donde las rutas cambian poco, ya que sigue enviando
+actualizaciones aunque no se usen.​
+❌ Requiere más procesamiento, lo que puede ser un problema en dispositivos con poca
+capacidad.
+
+📌 4. ZRP (Zone Routing Protocol)
+📌 ¿Cómo funciona?
+
+ZRP es un protocolo híbrido, combinando características de protocolos reactivos y
+proactivos. Divide la red en zonas y maneja el enrutamiento de dos maneras:
+1️⃣ Dentro de la zona (proactivo):
+●​ Usa un protocolo proactivo dentro de cada zona, manteniendo rutas actualizadas
+constantemente para los nodos cercanos.​
+
+2️⃣ Entre zonas (reactivo):
+●​ Si un nodo necesita enviar datos fuera de su zona, usa un protocolo reactivo para
+encontrar la mejor ruta.​
+
+📊 Ventajas de ZRP
+
+✔️ Reduce la latencia dentro de las zonas porque las rutas están predefinidas.​
+✔️ Evita el problema de alto tráfico de control en protocolos completamente proactivos.​
+✔️ Mejor para redes de tamaño mediano donde algunos nodos se mueven frecuentemente.
+
+❌ Desventajas de ZRP
+
+❌ Definir el tamaño óptimo de las zonas es complicado; si son muy grandes, se pierde
+eficiencia.​
+❌ No es ideal para redes altamente dinámicas porque puede generar errores cuando los
+nodos se mueven entre zonas.​
+❌ Más complejo de implementar que AODV o DSR.
+
+📊 5. Comparación de Protocolos
+Protoco
+lo
+
+Tipo
+
+Latencia
+
+Consumo de
+Ancho de
+Banda
+
+Escalabilid
+ad
+
+Movilida
+d
+Soporta
+da
+
+Aplicaci
+ón Ideal
+
+AODV
+
+Reactiv
+o
+
+Alta (en
+descubrimient
+o)
+
+Bajo (sin
+tráfico
+innecesario)
+
+Alta
+
+Alta
+
+Redes
+dinámica
+sy
+móviles
+
+DSR
+
+Reactiv
+o
+
+Alta (en redes
+grandes)
+
+Bajo
+(almacena
+rutas en
+caché)
+
+Baja (no
+escala bien)
+
+Media
+
+Redes
+pequeñas
+con baja
+movilidad
+
+OLSR
+
+Proactiv
+o
+
+Baja (rutas
+siempre
+disponibles)
+
+Alto
+(actualizacion
+es
+constantes)
+
+Alta
+
+Media
+
+Redes
+grandes y
+con
+tráfico
+constante
+
+ZRP
+
+Híbrido
+
+Media
+
+Media
+
+Media
+
+Media
+
+Redes
+medianas
+con
+movilidad
+moderad
+a
+
+📌 6. ¿Cuál usar en tu caso?
+Para una red MANET en desastres naturales, donde los nodos pueden moverse
+constantemente y la infraestructura está caída:
+
+✅ AODV es la mejor opción porque responde bien a los cambios en la topología y es
+eficiente en el uso de ancho de banda.​
+✅ ZRP puede ser útil si hay zonas de dispositivos fijas y otras móviles.
+❌ OLSR y DSR no son ideales porque OLSR consume demasiado ancho de banda y
+DSR no escala bien en redes grandes y cambiantes.
+
+📌 Información sobre AODV en el documento
+El documento analiza AODV como un protocolo reactivo, lo que significa que no mantiene
+rutas continuamente, sino que las busca solo cuando es necesario.
+
+1️⃣ Características Clave de AODV según el documento
+
+🔹 Descubrimiento de rutas bajo demanda: No almacena rutas innecesarias, lo que
+ahorra memoria y ancho de banda.​
+🔹 Tablas de enrutamiento dinámicas: Solo mantiene información sobre rutas activas,
+evitando el consumo innecesario de recursos.​
+🔹 Uso de mensajes RREQ y RREP:
+●​ Los nodos emiten un Route Request (RREQ) cuando necesitan encontrar una ruta.​
+
+●​ Una vez hallada, el destino responde con un Route Reply (RREP) para establecer
+la conexión.​
+
+🔹 Detección y reparación de rutas rotas:
+●​ Si un nodo en la ruta se mueve, el protocolo genera un mensaje Route Error
+(RERR) para notificar a los nodos afectados.​
+●​ Luego, el origen puede intentar encontrar una nueva ruta.​
+
+2️⃣ Ventajas de AODV según el documento
+
+✅ Escalabilidad: Funciona bien en redes grandes porque solo almacena rutas cuando son
+necesarias.​
+✅ Menor consumo de ancho de banda: No envía actualizaciones constantes,
+reduciendo el tráfico de control.​
+✅ Adecuado para redes móviles: Tolera bien los cambios en la topología de la red
+debido a la movilidad de los nodos.​
+✅ Menor latencia en redes con tráfico moderado: Como solo busca rutas cuando es
+necesario, evita el tráfico innecesario.
+
+3️⃣ Desventajas de AODV según el documento
+
+❌ Latencia en el primer envío: Si un nodo necesita enviar un mensaje y no tiene una ruta
+almacenada, debe primero descubrirla, lo que introduce retrasos.​
+❌ Mayor vulnerabilidad a ataques: AODV puede ser susceptible a ataques como
+blackhole o wormhole, donde nodos maliciosos pueden engañar la red fingiendo rutas
+más cortas.​
+Congestión en redes densas: Si hay muchos nodos buscando rutas al mismo tiempo,
+el tráfico de control (RREQ) puede saturar la red.​
+Mayor consumo energético en redes muy dinámicas: Cuando la topología cambia
+frecuentemente, los mensajes RREQ y RERR pueden ser enviados con demasiada
+frecuencia.
+
+❌
+❌
+
+4️⃣ AODV en el Contexto de Redes de Emergencia (Tu Caso)
+
+📢 Según el documento, AODV es una buena opción para redes MANET en desastres
+naturales debido a que:
+
+●​ No depende de infraestructura fija, por lo que puede desplegarse rápidamente.​
+
+●​ Funciona bien en redes altamente dinámicas, como en un entorno de emergencia
+donde los nodos (móviles, drones, rescatistas) cambian de posición.​
+●​ Minimiza el uso de ancho de banda, lo cual es clave en situaciones donde los
+recursos son limitados.
+https://ieeexplore.ieee.org/document/5237135
+
+Problemas inherentes a las redes inalámbricas ad hoc
+1.​ Estaciones ocultas (Hidden Station Problem):
+○​ Se da cuando dos estaciones no pueden escucharse entre sí, pero ambas
+intentan transmitir a una tercera estación común. Esto provoca colisiones en
+los paquetes que llegan a la estación receptora.
+○​ Solución típica: Mecanismo RTS/CTS (Request to Send / Clear to Send), que
+permite una reserva "virtual" del canal para evitar colisiones. Sin embargo,
+tiene un overhead adicional y no siempre funciona eficazmente en redes
+densas.
+2.​ Estaciones expuestas (Exposed Station Problem):
+○​ Ocurre cuando una estación evita transmitir porque detecta actividad de otra
+estación vecina, aunque esta transmisión no interferiría con su propia
+comunicación. Esto lleva a una infrautilización del canal.
+○​ Ejemplo: Una estación en la misma área geográfica que otra deja de
+transmitir innecesariamente por "exposición".
+3.​ Zonas grises (Gray Zones):
+○​ Estas son áreas donde una estación parece estar dentro del rango de
+transmisión de otra, pero los enlaces son poco confiables o no permiten la
+comunicación bidireccional consistente.
+○​ Problema: Las zonas grises generan rutas inestables y pérdida masiva de
+paquetes (hasta el 100%), especialmente durante cambios de ruta. Esto
+afecta significativamente protocolos como AODV y OLSR.
+○​ Causa: Diferencias en los rangos de transmisión entre mensajes de control
+(como HELLO) y datos, lo que crea incoherencias.
+4.​ Interferencia (Interference Range):
+○​ En redes ad hoc, el rango de interferencia es mayor que el rango de
+transmisión, lo que significa que las transmisiones pueden interferir con otras
+estaciones que no están dentro del rango de recepción directa.
+○​ Efectos: Las interferencias reducen la calidad del canal y dificultan la
+transmisión fiable.
+5.​ Movilidad de las estaciones:
+○​ Las redes MANETs son dinámicas debido al movimiento de las estaciones.
+Esto provoca fallos en las rutas existentes y la necesidad de constantes
+recalculaciones de rutas.
+○​ Impacto: El protocolo TCP interpreta los fallos de ruta como congestión,
+activando mecanismos innecesarios de control de congestión y degradando
+el rendimiento.
+
+Problemas específicos de los protocolos utilizados en redes MANETs
+1.​ Problemas con protocolos como AODV y OLSR:
+○​ AODV: Puede registrar rutas que no son confiables debido a la recepción
+intermitente de mensajes de control, creando rutas ineficaces.
+○​ OLSR: Consume recursos constantemente al mantener actualizadas las
+tablas de rutas, lo que puede no ser práctico en entornos de alta movilidad.
+2.​ Problemas MAC (Nivel de acceso al medio):
+○​ Sensado físico y virtual del canal:
+■​ El rango de sensado físico es mayor que el rango de transmisión. Las
+estaciones "perciben" actividad incluso cuando no son parte de la
+transmisión, bloqueando el acceso innecesariamente.
+○​ Retransmisiones y Backoff exponencial:
+■​ El protocolo de acceso al canal (CSMA/CA) puede favorecer a las
+estaciones que recientemente han tenido éxito en transmitir, creando
+inequidades.
+3.​ Problemas de congestión y fairness (justicia):
+○​ El protocolo TCP presenta problemas de injusticia en redes MANETs, donde
+conexiones de un solo salto (one-hop) tienden a monopolizar el canal frente a
+conexiones de múltiples saltos.
+
+Ejemplo práctico de impacto en MANETs
+En una topología tipo "cadena" (string topology), como se describe en el documento, el
+rendimiento general tiende a ser bajo. Las primeras estaciones en la cadena tienen
+prioridad para transmitir, mientras que las estaciones al final sufren de falta de acceso al
+canal debido al backoff y al acaparamiento del canal por las estaciones iniciales.
+
+Conclusión
+Estos problemas destacan la necesidad de soluciones más avanzadas, como:
+●​ Modificaciones al protocolo MAC (por ejemplo, DCMA para mejorar la
+retransmisión).
+●​ Protocolos tolerantes a retrasos (DTN) que permiten comunicación incluso en redes
+altamente desconectadas.
+●​ Optimización de enrutamiento para manejar dinámicas de movilidad y zonas grises
+de manera más efectiva.
+
+https://www.sciencedirect.com/science/article/pii/S1746809424006141?via%3Dihub
+
+El Aggregation-based Archive Population Optimization (AAPO) es un enfoque de
+optimización inspirado en el comportamiento colectivo de aves, diseñado específicamente
+para mejorar el enrutamiento en redes MANET. Este método combina estrategias de
+exploración y explotación para encontrar rutas óptimas, reduciendo el consumo de energía y
+mejorando la conectividad de la red. Aquí tienes una descripción detallada sobre cómo
+funciona AAPO:
+
+Elementos fundamentales de AAPO
+1.​ Inspiración biológica:
+○​ AAPO está inspirado en el comportamiento de las aves que buscan comida
+en grupo. Cada "partícula" en el sistema representa una solución potencial y
+se mueve por el espacio de búsqueda buscando el mejor resultado.
+○​ La "fluctuación" de las partículas permite ajustar su posición y velocidad
+según la experiencia personal y la información obtenida del líder global del
+grupo.
+2.​ Definición de la solución óptima:
+○​ Cada partícula registra su mejor solución personal (pbest), así como la mejor
+solución del grupo (gbest). Estas referencias guían el movimiento de las
+partículas hacia áreas más prometedoras.
+○​ La actualización de posición y velocidad se realiza utilizando ecuaciones que
+toman en cuenta factores locales y globales de aprendizaje, junto con valores
+aleatorios que promueven la diversidad.
+3.​ Evaluación de rutas:
+○​ AAPO utiliza reglas de costo para evaluar la calidad de las rutas antes de
+utilizarlas para la transmisión de datos.
+○​ Cada solución se compara en términos de eficiencia energética, distancia a
+los nodos vecinos y características de convergencia.
+
+Pasos en el funcionamiento de AAPO
+1.​ Inicialización:
+○​ Se genera aleatoriamente una población inicial de partículas en un espacio
+multidimensional, representando posibles rutas.
+○​ Se identifican los nodos vecinos más cercanos y se calculan las distancias
+entre ellos.
+2.​ Actualización de posición y velocidad:
+○​ Las partículas ajustan su posición y velocidad utilizando ecuaciones que
+consideran tanto soluciones locales como globales, manteniendo un
+equilibrio entre exploración (buscar nuevas áreas) y explotación (mejorar
+soluciones ya encontradas).
+3.​ Selección del mejor líder:
+○​ AAPO emplea un sistema de competencia entre partículas para elegir el líder
+global (gbest) que guiará al resto del grupo hacia la mejor solución.
+4.​ Sincronización del archivo externo:
+
+○​ Las soluciones no dominadas se almacenan en un archivo externo que se
+actualiza continuamente para mantener la diversidad y garantizar la
+convergencia hacia las mejores soluciones.
+5.​ Reglas de agregación de costos:
+○​ Se aplican reglas que comparan soluciones cercanas en términos de costo
+asociado, eliminando aquellas que no son eficientes para reducir el consumo
+de recursos y mantener la variabilidad en el archivo.
+
+Ventajas de AAPO
+●​ Reducción de interrupciones: AAPO aprovecha múltiples rutas en lugar de
+depender de una sola, lo que minimiza problemas por la inaccesibilidad repentina de
+nodos.
+●​ Eficiencia energética: Optimiza el uso de energía en los nodos móviles, utilizando
+solo el 42.69 % del consumo en los escenarios probados.
+●​ Alto rendimiento: Mejora la tasa de entrega de paquetes (PDR) al 87.1 %,
+aumentando la fiabilidad de la transmisión de datos.
+
+Aplicación en MANETs
+El AAPO es particularmente útil en escenarios dinámicos como los MANETs, donde los
+nodos son móviles y los enlaces son poco estables. Su capacidad para adaptarse a
+topologías cambiantes y garantizar la continuidad de las transmisiones lo hace adecuado
+para gestionar redes en situaciones críticas, como desastres naturales.
+
+. Qué es el MMS-DSR y sus Componentes Clave
+El Multi-Metric Scoring Dynamic Source Routing (MMS-DSR) es una mejora del
+protocolo clásico DSR (Dynamic Source Routing), diseñado para abordar las exigencias
+complejas de las redes MANETs y VANETs en entornos habilitados por el 6G. MMS-DSR se
+basa en varios componentes clave que aprovechan tecnologías avanzadas, como el
+machine learning y el beamforming, para optimizar el enrutamiento y la calidad de enlace.
+a) Motor de evaluación multi-métrica (Multi-Metric Scoring Engine, MMSE):
+●​ Evalúa las rutas descubiertas según múltiples métricas como latencia, ancho de
+banda, fiabilidad y eficacia del beamforming.
+●​ Ajusta dinámicamente los pesos asignados a cada métrica utilizando datos actuales
+de la red y predicciones futuras.
+●​ Esto es especialmente útil en entornos urbanos, donde las condiciones de la red
+cambian rápidamente debido al alto número de dispositivos conectados.
+b) Unidad de predicción basada en machine learning (MLPU):
+
+●​ Utiliza un modelo CNN-LSTM, que combina redes neuronales convolucionales
+(CNN) para extraer características espaciales, y redes de memoria a largo plazo
+(LSTM) para capturar patrones temporales.
+●​ Permite predecir estados futuros de la red, como la calidad del enlace o la movilidad
+de los nodos, lo que es crucial en redes MANETs altamente dinámicas o
+desconectadas.
+c) Unidad de optimización de beamforming (BOU):
+●​ Ajusta dinámicamente los vectores de beamforming para maximizar la fuerza y
+dirección de la señal, basándose en condiciones del canal de comunicación (CSI) en
+tiempo real y predicciones futuras.
+d) Caché de rutas:
+●​ Almacena rutas óptimas basadas en datos predictivos y actuales. Esto reduce el
+tiempo de descubrimiento de rutas y mejora la eficiencia de la red.
+
+2. Integración en Entornos de Redes Caídas
+Aunque el MMS-DSR es más adecuado para entornos con conectividad parcial y alta
+movilidad, puede ser adaptado para mejorar su desempeño en situaciones de redes caídas
+con las siguientes consideraciones:
+Predicción y Adaptación Proactiva:
+●​ Al predecir posibles interrupciones o congestiones en los enlaces, el MMS-DSR
+ajusta sus decisiones de enrutamiento antes de que ocurran fallos. Esto es esencial
+cuando ciertas partes de la red están desconectadas.
+Aprovechamiento del Beamforming:
+●​ Los algoritmos de beamforming permiten mejorar la calidad del enlace entre nodos
+que se encuentran al borde del rango de conexión. Sin embargo, en redes
+completamente desconectadas, esta ventaja se limita.
+Complemento con Protocolos DTN:
+●​ Para redes caídas, el MMS-DSR podría combinarse con enfoques tolerantes a
+retrasos (DTN). Estos permiten almacenar datos temporalmente y reenviarlos
+cuando los nodos vuelvan a estar accesibles, asegurando que los paquetes no se
+pierdan.
+
+Uso de Inteligencia Artificial: Machine Learning (CNN-LSTM)
+El protocolo MMS-DSR aplica un modelo híbrido de CNN-LSTM que aprovecha la
+inteligencia artificial para mejorar el enrutamiento y la calidad de los enlaces en redes
+dinámicas habilitadas para el 6G. Este enfoque inteligente incluye los siguientes elementos:
+
+●​ Predicción basada en redes neuronales: La CNN-LSTM analiza datos históricos y
+actuales para identificar patrones espaciales y temporales en el comportamiento de
+la red. Esto permite prever condiciones futuras, como movilidad de los nodos,
+calidad de los enlaces y zonas de interferencia.
+●​ Proactividad en las decisiones de enrutamiento: El modelo predice la calidad de
+las rutas y ajusta vectores de beamforming antes de que ocurran problemas en la
+red. Esto ayuda a minimizar la pérdida de paquetes y a mantener una comunicación
+fluida incluso en entornos altamente móviles o parcialmente desconectados.
+●​ Integración con el motor de evaluación multi-métrica: Los resultados de las
+predicciones se integran en el motor de puntuación, que prioriza las rutas con
+mejores métricas. De este modo, el sistema combina información actual y
+proyectada para tomar decisiones más robustas y eficientes.
+Con este enfoque, el MMS-DSR es capaz de adaptarse a las condiciones cambiantes de la
+red, garantizando una experiencia de comunicación optimizada en escenarios urbanos
+complejos.
+Para redes caídas, el MMS-DSR podría combinarse con enfoques tolerantes a retrasos
+(DTN). Estos permiten almacenar datos temporalmente y reenviarlos cuando los nodos
+vuelvan a estar accesibles, asegurando que los paquetes no se pierdan.
+
+No exactamente. El protocolo MMS-DSR, según lo presentado en el documento, sí podría
+ser útil en redes móviles con nodos dinámicos, pero no está diseñado específicamente
+para entornos totalmente desconectados y sin infraestructura alguna, como sería el
+caso de redes caídas durante desastres naturales. Aquí te explico con más detalle:
+
+Fortalezas del MMS-DSR en redes móviles
+1.​ Adaptación en tiempo real:
+○​ Gracias a su integración con modelos de aprendizaje automático
+(CNN-LSTM), el protocolo predice condiciones futuras de la red, optimiza
+rutas dinámicamente y ajusta vectores de beamforming para mejorar la
+calidad de las señales.
+○​ Esto lo hace ideal para redes con nodos móviles y situaciones de alta
+variabilidad, como en ciudades inteligentes o sistemas vehiculares (VANETs).
+2.​ Optimización multi-métrica:
+○​ Evalúa rutas teniendo en cuenta métricas clave como latencia, ancho de
+banda, fiabilidad y eficacia del beamforming.
+○​ Este enfoque es altamente adaptable en redes móviles urbanas densas.
+
+Limitaciones en redes sin infraestructura ni conectividad
+1.​ Dependencia de conectividad mínima:
+○​ MMS-DSR requiere que haya al menos cierta capacidad para transmitir datos
+entre nodos (aunque sea intermitente). Si no hay enlaces funcionales o la red
+está totalmente desconectada, el protocolo no puede operar.
+2.​ Enfoque en entornos urbanos conectados:
+
+○​ Su diseño parte del supuesto de que las tecnologías de apoyo, como antenas
+MU-MIMO y estándares como IEEE 802.11ax, están disponibles. Esto lo
+hace más adecuado para escenarios con cierta infraestructura, aunque sea
+mínima.
+
+Complemento necesario para redes caídas
+●​ Protocolos tolerantes a retrasos (DTNs): En redes completamente
+desconectadas, como tras un desastre natural, los protocolos DTN serían más
+adecuados. Estos almacenan datos temporalmente y los transmiten cuando se
+restablece la conectividad.
+●​ MMS-DSR podría combinarse con DTNs para aprovechar su capacidad predictiva y
+proactiva mientras se manejan desconexiones prolongadas.
+
+Conclusión
+MMS-DSR es un protocolo avanzado y eficaz para manejar redes móviles con nodos
+altamente dinámicos, pero no está optimizado para escenarios sin infraestructura y sin
+conectividad básica. En estos casos, sería necesario integrarlo con otras tecnologías
+diseñadas para operar en redes caídas.
+
+
