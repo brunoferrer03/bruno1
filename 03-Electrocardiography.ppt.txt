@@ -1,0 +1,639 @@
+       Class 3
+Electrocardiography
+         Federico Mason
+     federico.mason@unipd.it
+AGENDA
+1.   Cardiovascular System
+
+2.   Heart Cycle
+
+3.   Electrocardiogram (ECG)
+
+4.   ECG Processing Pipeline
+
+5.   Heart Rate Variability (HRV)
+Introduction
+In 2018, Davide Astori (Italian soccer player) died because
+of ventricular fibrillation (a type of arrhythmia) at the age of 31
+
+➢ The reason was a genetic disorder that was not identified
+  via traditional medical examinations
+
+Sudden cardiac death is the most common cause of death
+in athletes, with an incidence of beyond 1 in 80,000 people
+per year, according to the most recent estimates
+
+The risk and causes of sudden cardiac death vary based upon the population:
+
+➢ In younger athletes (< 35 years), it is commonly due to inherited cardiac conditions
+
+➢ In older athletes (> 35 years), it is commonly due to coronary artery disease
+Introduction
+The monitoring of heart activity is fundamental for ensuring that a person does not
+present cardiac abnormalities
+
+➢ Acute coronary syndromes, including ischemia and heart attack,
+  involve a limitation of the blood flow toward the heart
+
+➢ Cardiac arrhythmias, including ventricular fibrillation,
+  involve irregularities in the heartbeat cycle
+
+
+While heart attacks lead to clear symptoms, ischemia and cardiac
+arrhythmias may be hard to detect via a single medical test
+but requires continuous monitoring of the heart status
+Cardiovascular System
+The cardiovascular system includes the heart and two
+groups of vessels
+
+➢ The arteries carry blood away from the heart
+
+➢ The veins carry blood back to the heart
+
+It is organized into two sub-systems
+
+➢ Systemic circulation makes blood with oxygen
+  exit the left heart and reach the rest of the body
+
+➢ Pulmonary circulation makes blood exit the right
+  heart and acquire fresh oxygen in the lungs
+                                                                              Aortic
+Cardiovascular System                                                         valve
+                                                       Superior
+The heart includes four chambers                      Vena Cava                        Pulmonary
+                                                                                          valve
+➢ Two atria (right and left)
+                                                      Right                               Left
+➢ Two ventricles (right and left)                    atrium                              atrium
+
+The four chambers alternately contract (systole)
+and relax (diastole) to pump blood throughout      Tricuspid                               Mitrial
+the human body                                       valve                                 valve
+
+The cardiac cycle is allowed by the polarization       Right
+                                                     ventricle                           Left
+and depolarization of cardiac muscle cells                                             ventricle
+named cardiomyocytes
+
+                                                                   Inferior
+                                                                  Vena Cava
+Heart Cycle
+Atrial and ventricular diastole
+
+➢ The atria and the ventricles expand
+  → atrial filling
+
+Atrial systole (and ventricular diastole)
+
+➢ The atria contract
+  → ventricular filling
+
+Ventricular systole (and atrial diastole)
+
+➢ The ventricles contract
+  → ventricular ejection
+                                            https://biologydictionary.net/cardiac-cycle/
+Action Potential
+When the heart is at rest, the potential inside of cardiomyocytes is approximately
+−𝟗𝟎 𝒎𝑽 with respect to the potential outside the cell membrane
+
+➢ The action potential makes
+  the potential inside of
+  cardiomyocytes become
+  positive with respect to the
+  potential outside
+
+➢ After the action potential,
+  the potential inside of
+  cardiomyocytes returns
+  to the resting conditions
+
+                                              https://studmed.uio.no/elaring/fag/hjertesykdommer/en/ecg/basal_elfys.html
+Heart Cycle
+The depolarization phenomenon associated with action potential makes the
+cardiomyocytes contract
+
+➢ The cells of the sinoatrial (SA) node depolarize first and immediately
+  triggers the contraction of the atria
+
+➢ The cells of the atrioventricular (AV) node conduct the depolarization
+  down a bundle of fibers, named the bundle of His
+
+➢ The cells of the Purkinje fibers enable the contraction of the ventricles,
+  which pump the blood out from the heart
+
+There is an inherent delay in this conduction process, making the atria contract
+before the ventricles and ensuring the correct heart operation
+Heart Cycle
+Heart Cycle
+We can measure the effect of the heart polarization
+and depolarization directly over the skin
+by an electrocardiogram (ECG)
+
+1. the P-wave represents the atrial systole,
+   i.e., the atrial depolarization
+
+2. the QRS complex represents the ventricular
+   systole, i.e., the ventricular depolarization
+
+3. the T-wave represents the ventricular diastole,
+   i.e., the ventricular repolarization
+Electrocardiogram
+
+
+
+
+                    https://www.brainkart.com/article/Flow-of-Current-Around-the-
+                               Heart-During-the-Cardiac-Cycle_19239/
+Electrocardiogram
+➢ When one portion of the heart is polarized and an adjacent
+  portion is depolarized, an electrical current moves through the
+  cardiac muscle
+
+➢ We can model the heart as an electric dipole in a 3-dimensional
+  space, pointing from the biggest mass of depolarized
+  myocardium to the biggest mass of polarized myocardium
+
+
+
+
+             O’Reilly C, Oruganti SDR, Tilwani D, Bradshaw J. Model-Driven Analysis of ECG Using Reinforcement Learning. Bioengineering. 2023; 10(6):696.
+Electrocardiogram
+Despite representing a repolarization phenomenon, the T-wave is upright!
+
+➢ Ventricular depolarization begins in the
+  endocardium and spreads toward
+  the epicardium while ventricular
+  repolarization follows the opposite pattern
+
+➢ The distribution of positive and
+  negative charges is the same
+  during ventricular depolarization
+  and repolarization
+
+
+                                                                https://studmed.uio.no/elaring/fag/hjertesykdommer/
+                                                                        celle_papir_en/del2/komponenter.html
+ECG Acquisition
+➢ A single electrode is not sufficient to
+  assess the direction and magnitude of
+  a 3-dimensional electric dipole
+
+➢ To obtain an accurate representation
+  of the cardiac dipole, we need to
+  combine measures derived from
+  multiple electrodes
+
+   • In an ideal scenario, three
+     measures could be enough!
+ECG Acquisition
+The standard ECG used in medical facilities
+is named 12-lead ECG and requires the
+placement of 9 surface-skin electrodes
+
+➢ 3 electrodes on the patient limbs
+  enable the recording of the limb leads
+  → 𝐼, 𝐼𝐼, 𝐼𝐼𝐼, 𝑎𝑉𝑅, 𝑎𝑉𝐹, 𝑎𝑉𝐿
+
+➢ 6 electrodes on the patient chest
+  enable the recording of the precordial
+  leads → 𝑉1, 𝑉2, 𝑉3, 𝑉4, 𝑉5, 𝑉6
+Limb Leads
+Leads 𝐼, 𝐼𝐼 and 𝐼𝐼𝐼 are called limb leads and point the extrema
+of the so-called Einthoven’s triangle
+
+➢ Lead 𝐼 is the potential difference between left arm (LA) and
+  the right arm (RA) → 𝐼 = 𝐿𝐴 − 𝑅𝐴                                      𝐼
+
+➢ Lead 𝐼𝐼 is the potential difference between left leg (LL) and
+  the right arm (RA) → 𝐼𝐼 = 𝐿𝐿 − 𝑅𝐴
+                                                                            𝐼𝐼𝐼
+➢ Lead 𝐼𝐼𝐼 is the potential difference between left leg (LL) and
+  the left arm (LA) → 𝐼𝐼𝐼 = 𝐿𝐿 − 𝐿𝐴                                𝐼𝐼
+
+
+We call common lead or Wilson’s central terminal the
+average potential across the human body
+
+                    𝑉𝑊 = (𝑅𝐴 + 𝐿𝐴 + 𝐿𝐿)Τ3
+Augmented Limb Leads
+Leads 𝑎𝑉𝑅, 𝑎𝑉𝐿 and 𝑎𝑉𝐹 are called augmented limb leads
+and are a linear combination of the limb leads
+
+➢ 𝑎𝑉𝑅 is the potential difference between the right arm (RA)
+  and the average potential of left arm (LA) and left leg (LL)         𝐼
+  → 𝑎𝑉𝑅 = 𝑅𝐴 − (𝐿𝐴 + 𝐿𝐿)Τ2
+
+➢ 𝑎𝑉𝐿 is the potential difference between the left arm (LA) and
+  the average potential of right arm (RA) and left leg (LL)                𝐼𝐼𝐼
+  → 𝑎𝑉𝐿 = 𝐿𝐴 − (𝑅𝐴 + 𝐿𝐿)Τ2
+                                                                  𝐼𝐼
+➢ 𝑎𝑉𝐹 is the potential difference between the left leg (LL) and
+  the average potential of right arm (RA) and left arm (LA)
+  → 𝑎𝑉𝐹 = 𝐿𝐿 − (𝑅𝐴 + 𝐿𝐴)Τ2
+Precordial Leads
+➢ 𝑉1 is placed to the right of the sternal border
+
+➢ 𝑉2 is situated to the left of the sternal border
+
+➢ 𝑉3 is placed between 𝑉2 and 𝑉4
+
+➢ 𝑉4 is placed at the level of the fifth intercostal
+  space in the mid-clavicular line
+
+➢ 𝑉5 is placed between 𝑉4 and 𝑉6
+
+➢ 𝑉6 is placed at the level of the fifth intercostal
+  space in the mid-axillary line
+12-lead ECG
+12-lead ECG                       Some advanced configurations
+                                    may include the posterior
+                                   precordial leads 𝑉7, 𝑉8, 𝑉9
+
+
+
+
+➢ Inferior leads: II, III, 𝑎𝑉𝐹
+
+➢ Septal leads: 𝑉1, 𝑉2
+
+➢ Anterior leads: 𝑉3, 𝑉4
+
+➢ Lateral leads: 𝑉5, 𝑉6, 𝐼, 𝑎𝑉𝐿
+12-lead ECG
+
+
+
+
+              https://youtu.be/kwLbSx9BNbU?feature=shared
+Single Lead ECG
+
+    Amplitude [mV]
+
+
+
+
+                     Time [s]
+Single Lead ECG         We call RR interval the time difference
+                         between two consecutive QRS peak
+    Amplitude [mV]
+
+
+
+
+                     Time [s]
+Cardiac Arrhythmias
+
+From the RR intervals, measured in second [s], we can assess the heart rate of a
+person, which is usually given in beat per minute [bpm]
+
+                              𝐻𝑅(𝑡) = 60ൗ𝑅𝑅(𝑡) [bpm]
+Cardiac Arrhythmias
+
+From the RR intervals, measured in second [s], we can assess the heart rate of a
+person, which is usually given in beat per minute [bpm]
+
+                               𝐻𝑅(𝑡) = 60ൗ𝑅𝑅(𝑡) [bpm]
+
+During resting condition, the HR is in the range between 60 and 100 𝑏𝑝𝑚
+
+➢ Lower HR values are associated with bradycardia
+
+➢ Higher HR values are associated with tachycardia
+
+Looking at the morphology of the ECG signal, it is possible to diagnose specific types
+of cardiac arrhythmias
+Cardiac Arrhythmias
+
+
+
+
+                 https://youtu.be/6LrptveKYus?feature=shared
+Acute Coronary Syndromes
+Cardiac arrhythmias are caused by malfunctions in the propagation of the electric
+signal within the heart muscle
+
+More critical conditions are associated with acute coronary syndromes, which involve
+a reduction of the blood flow to the myocardium
+Acute Coronary Syndromes
+Cardiac arrhythmias are caused by malfunctions in the propagation of the electric
+signal within the heart muscle
+
+More critical conditions are associated with acute coronary syndromes, which involve
+a reduction of the blood flow to the myocardium
+
+➢ If the coronary arteries are partially blocked,
+  we have a non-ST-elevation myocardial infarction
+
+➢ If the coronary arteries are completely blocked,
+  we have an ST-elevation myocardial infarction
+
+➢ If it is not detected promptly, myocardial infarction
+  makes the heart stop beating and, consequently,
+  causes the death of the person
+Acute Coronary Syndromes
+
+
+
+
+                https://youtu.be/C0BUPHYQ1h4?feature=shared
+ECG Processing Pipeline
+A single-lead ECG can be easily recorded via a wearable or minimally invasive device
+
+➢ This enables the continuous monitoring of the patient, which is fundamental for
+  detecting disorders that do not present prominent symptoms
+
+➢ This does not allow us to build a full picture of the cardiac dipole, which is three-
+  dimensional and, thus, requires at least three electrical measures
+
+
+
+
+                                Analog to Digital
+                                  Converter         TX    Channel     RX       Pre-processing
+ECG Processing Pipeline
+ECG signals (both single- or multi-lead) have a bandwidth ranging from 50 𝐻𝑧 (commercial
+applications) to 100 𝐻𝑧 (medical applications), and may reach values of 5.0 𝑚𝑉
+
+➢ The sampling frequency 𝑓𝑠 must be higher than 100 𝐻𝑧, a value raised up
+  to 500 𝐻𝑧 in medical scenarios
+
+➢ The resolution value must be lower than 0.01 𝑚𝑉 while the saturation value
+  must be higher than 5.0 𝑚𝑉
+
+➢ The raw ECG signal is characterized by a direct current (DC) component
+  of ±300 𝑚𝑉, which must be removed before processing the data
+ECG Processing Pipeline
+To pre-process an ECG signal, we need to execute three main tasks
+
+➢ Denoising to eliminate power line interference and the artifacts caused by other sources
+  but the cardiac muscle (e.g., respiration)
+
+➢ Peak detection to identify the QRS peak and, consequently, compute the Heart Rate (HR)
+  and/or the Heart Rate Variability (HRV)
+
+➢ Segmentation to split the signal into windows, each representing a cardiac cycle, and
+  extract morphological signal features
+Denoising
+
+
+
+
+  ➢ Respiration and movements lead to low-frequency (slow-changing) interferences
+    that can be removed via a high-pass filter (with 0.5 𝐻𝑧 as a cutoff frequency)
+Denoising
+
+
+
+
+  ➢ Muscles lead to high-frequency (fast-changing) interferences that can be removed via
+    a low-pass filter (with 20 𝐻𝑧 as a cutoff frequency)
+Powerline Interference
+Physiological signals recorded from the human body, including ECG and EEG, suffer the
+electromagnetic interference of the recording devices, which are supplied with a 50 𝐻𝑧 (or
+60 𝐻𝑧, depending on the country) electric current
+
+➢ It is important to remove the powerline
+
+
+
+
+                                                                                         Gu, L., Zhou, N., and Wu, H. “Application of interference
+                                                                                         canceller in bioelectricity signal disposing,” in Procedia
+  interference by applying a notch filter on
+
+
+
+
+                                                                                             Environmental Sciences, 10, pp. 814-819, 2011.
+  the powerline frequency and its harmonics
+  k ∙ 𝑓𝑝𝑜𝑤𝑒𝑟 𝐻𝑧, with 𝑘 ∈ ℤ+
+
+➢ In electrocardiography, this is not a critical
+  issue since ECG information are contained
+  in frequencies lower than 50 Hz
+QRS Peak Detection
+A common method for detecting the QRS peak is the Pan-Tompkins algorithm
+
+➢ Apply a band-pass filter to remove the components outside of the 5 − 15 𝐻𝑧
+  frequency range
+QRS Peak Detection
+A common method for detecting the QRS peak is the Pan-Tompkins algorithm
+
+➢ Apply a band-pass filter to remove the components outside of the 5 − 15 𝐻𝑧
+  frequency range
+
+➢ Apply a derivative filter to highlight the portion of the signal characterized by
+  abrupt changes (i.e., in the proximity of the QRS complexes)
+QRS Peak Detection
+A common method for detecting the QRS peak is the Pan-Tompkins algorithm
+
+➢ Apply a band-pass filter to remove the components outside of the 5 − 15 𝐻𝑧
+  frequency range
+
+➢ Apply a derivative filter to highlight the portion of the signal characterized by
+  abrupt changes (i.e., in the proximity of the QRS complexes)
+
+➢ Apply the square function and a moving average to gain information about the
+  duration of the QRS complexes
+QRS Peak Detection
+A common method for detecting the QRS peak is the Pan-Tompkins algorithm
+
+➢ Apply a band-pass filter to remove the components outside of the 5 − 15 𝐻𝑧
+  frequency range
+
+➢ Apply a derivative filter to highlight the portion of the signal characterized by
+  abrupt changes (i.e., in the proximity of the QRS complexes)
+
+➢ Apply the square function and a moving average to gain information about the
+  duration of the QRS complexes
+
+➢ Identify the local maxima of the filtered signals as QRS peaks, assuming that each
+  peak must be followed by a refractory period of 200 𝑚𝑠
+
+    • Two dynamic thresholds are used for discerning false and true positive
+QRS Peak Detection
+                                   a           i nal
+
+
+
+
+                                       i e s
+                 an   ass iltere                       iltere   it t e eri ati e ilter
+
+
+
+
+                      i e s                                            i e s
+                        are                                     o in       era e
+                                                                                         ntegrated signal
+                                                                                         detected R
+                                                                                          oise evel
+                                                                                          ignal evel
+                                                                                          da tive hreshold
+
+
+
+
+                      i e s                                        i e s
+Morphological Features
+Beyond the RR intervals (and, thus, the heart rhythm) we may compute
+
+➢ The PR interval, which denotes
+  the time from the beginning of the
+  atrial contraction to the beginning of
+  the ventricular contraction, normally
+  ranging from 0.12 𝑠 to 0.20 𝑠
+
+➢ The QRS complex, which denotes
+  the ventricular contraction, normally
+  ranging from 0.06 𝑠 to 0.10 𝑠
+Morphological Features
+Beyond the RR intervals (and, thus, the heart rhythm) we may compute
+
+➢ The ST interval, which denotes the
+  period during which the ventricles
+  are contracted and pump the blood
+  through the body, normally ranging
+  from 0.08 𝑠 to 0.12 𝑠
+
+➢ the QT interval, which denotes the
+  time from the beginning of the
+  ventricular contractions to the full
+  relaxation of the heart, normally
+  ranging from 0.35 𝑠 to 0.45 𝑠
+Morphological features
+
+
+
+
+                 https://youtu.be/ScZVGHDisa0?feature=shared
+Heart Rate Variability
+A useful biomarker of heart status is Heart Rate Variability (HRV), which denotes the
+tendency of the RR intervals to fluctuate in time
+
+➢ Fluctuations of the RR interval in time are an indicator of a healthy individual, while a low
+  HRV is a sign of health problems since it denotes that the patient has a high heart rate
+  at rest or cannot adapt the heart rate to changing situations
+Heart Rate Variability
+A useful biomarker of heart status is Heart Rate Variability (HRV), which denotes the
+tendency of the RR intervals to fluctuate in time
+
+➢ Fluctuations of the RR interval in time are an indicator of a healthy individual, while a low
+  HRV is a sign of health problems since it denotes that the patient has a high heart rate
+  at rest or cannot adapt the heart rate to changing situations
+
+HRV can be estimated in a time-dependent fashion, i.e., by selecting a time window 𝑇 and
+computing the feature 𝐻𝑅𝑉(𝑡) according to all the RR intervals measured between time
+𝒕 and time 𝒕 + 𝑻
+
+➢ The selection of 𝑇 trades off between estimation accuracy and time sensitivity → A value
+  of at least 𝑇 = 4 min is recommended to have reliable measures!
+Heart Rate Variability
+We model the RR intervals associated with an ECG signal as a time series, and we denote
+by 𝑅𝑅𝑖 the 𝑖-th element of the series
+
+We segment the series into windows, each lasting 𝑇 seconds, and denote by 𝒩(𝑡) the
+indexes of the RR intervals detected from time 𝑡 to time 𝑡 + 𝑇 and by 𝒩(𝑡) the size of 𝒩(𝑡)
+Heart Rate Variability
+We model the RR intervals associated with an ECG signal as a time series, and we denote
+by 𝑅𝑅𝑖 the 𝑖-th element of the series
+
+We segment the series into windows, each lasting 𝑇 seconds, and denote by 𝒩(𝑡) the
+indexes of the RR intervals detected from time 𝑡 to time 𝑡 + 𝑇 and by 𝒩(𝑡) the size of 𝒩(𝑡)
+
+➢ The average 𝐴𝑉𝑅𝑅 𝑡 and the standard deviation 𝑆𝐷𝑅𝑅(𝑡) of the RR intervals from time
+  𝑡 and time 𝑡 + 𝑇 represent two estimates of the HR and the HRV at time 𝑡
+
+                        σ𝑖∈𝒩(𝑡) 𝑅𝑅𝑖                   σ𝑖∈𝒩(𝑡) 𝑅𝑅𝑖 − 𝐴𝑉𝑅𝑅(𝑡)   2
+             𝐴𝑉𝑅𝑅 𝑡 =                 ,   𝑆𝐷𝑅𝑅(𝑡) =
+                           𝒩(𝑡)                                 𝒩(𝑡)
+Heart Rate Variability
+From the series of RR intervals, we can compute the series of subsequent RR interval
+differences as 𝑆𝐷𝑖 = 𝑅𝑅𝑖+1 − 𝑅𝑅𝑖
+
+We denote by ℳ(𝑡) the indexes of the RR interval differences detected from time 𝑡 to time
+𝑡 + 𝑇 and by ℳ(𝑡) the size of ℳ(𝑡)
+
+➢ We can estimate the HRV at time 𝑡 by the following metrics
+
+                                                                                   2
+                        σ𝑖∈ℳ(𝑡) 𝑆𝐷𝑖                      σ𝑖∈ℳ   𝑡   𝑆𝐷𝑖 − 𝐴𝑉𝑆𝐷 𝑡
+            𝐴𝑉𝑆𝐷 𝑡 =                  ,   𝑆𝐷𝑅𝑅 𝑡 =                                     ,
+                          ℳ(𝑡)                                       ℳ 𝑡
+
+                                              σ𝑖∈ℳ       𝑆𝐷𝑖   2
+                                                     𝑡
+                                 𝑅𝑀𝑆𝐷(𝑡) =
+                                                  ℳ 𝑡
+Heart Rate Variability
+Another HRV estimate is the probability (ppRR𝜏) that consecutive RR intervals differ more
+than 𝝉 milliseconds, where 𝜏 is usually set to 50 𝑚𝑠 or 20 𝑚𝑠
+
+                                           σ𝑖∈ℳ   𝑡   𝜒(𝑆𝐷𝑖 > 𝜏)
+                              𝑝𝑝𝑅𝑅𝜏(𝑡) =
+                                                  ℳ 𝑡
+
+                                             1  𝑆𝐷𝑖 > 𝜏
+                               𝜒 𝑆𝐷𝑖 > 𝜏 = ቊ
+                                            0 𝑜𝑡ℎ𝑒𝑟𝑤𝑖𝑠𝑒
+
+Both RMSD and ppNN𝜏 are considered markers of the vagal (i.e., parasympathetic) tone of
+the autonomic nervous system
+Heart Rate Variability
+We can implement a short-time Fourier transform and analyze the spectral density of the
+RR interval series, considering 𝑇 as the windowing period
+
+➢ RR intervals are irregular in time (unless you have a perfectly periodic rhythm) → Before
+  implementing the transform, we need to interpolate the series!
+
+After the interpolation, we obtain a series of equidistant samples in the time domain, as in
+the case of a discrete-time signal 𝑥[∙]
+
+                                      𝑅𝑅[𝑛],     𝑛 ∈ ℤ+
+
+                       +∞
+                                                                1,     𝑛 ≤ 𝑁ൗ2 − 1
+           ℛℛ[𝑘, 𝑛] = ෍ 𝑥 𝑚 𝑤 𝑚 − 𝑛 𝑒 −𝑖2𝜋𝑓𝑚 ,         𝑤 𝑛 =ቐ
+                       𝑚=0
+                                                             0,          𝑛 ≥ − 𝑁ൗ2
+Heart Rate Variability
+Given the spectral density ℛℛ[𝑘, 𝑛] of the RR intervals at sample 𝑛, we can compute the
+energy of significant frequency bands:
+
+➢ the low-frequency (LF) band 0.06, 0.10 𝐻𝑧 reflects both the sympathetic and the vagal
+  (i.e., parasympathetic) tones of the autonomic nervous system
+
+➢ the high-frequency (HF) band [0.15, 0.40] 𝐻𝑧 reflects the vagal (i.e., parasympathetic)
+  tones of the autonomic nervous system
+Heart Rate Variability
+Given the spectral density ℛℛ[𝑘, 𝑛] of the RR intervals at sample 𝑛, we can compute the
+energy of significant frequency bands:
+
+➢ the low-frequency (LF) band 0.06, 0.10 𝐻𝑧 reflects both the sympathetic and the vagal
+  (i.e., parasympathetic) tones of the autonomic nervous system
+
+➢ the high-frequency (HF) band [0.15, 0.40] 𝐻𝑧 reflects the vagal (i.e., parasympathetic)
+  tones of the autonomic nervous system
+
+                           0.10                                 0.40
+               𝐸𝐿𝐹 𝑡 = න          ℛℛ(𝑓, 𝑡) 2 𝑑𝑓,    𝐸𝐻𝐹 𝑡 = න          ℛℛ(𝑓, 𝑡) 2 𝑑𝑓
+                          0.06                                0.15
+
+
+The energy ratio 𝐸𝑅 𝑡 = 𝐸𝐿𝐹 𝑡 ൗ𝐸𝐻𝐹     𝑡   between 𝐸𝐿𝐹 𝑡 and 𝐸𝐻𝐹 𝑡 is considered a marker of
+the sympathetic–vagal balance
+References
+➢ Katz, .M., “Physiology of the Heart,” i       incott Willia s & Wilkins,      .
+
+➢ Ha ton, J. and Ha ton, J., “ he ECG Made Easy E-Book: The ECG Made Easy E-
+  Book,” Elsevier Health ciences,  9.
+
+➢    haffer, F. and Ginsberg, J.P., “ n overview of heart rate variability   etrics and nor s,”
+    Frontiers in Public Health, Vol. 5, pp. 258, 2017.
+
+➢     nt an, E.M., et al., “ CC/ H guidelines for the anage ent of atients with       -
+    elevation yocardial infarction,” Journal of the  erican College of Cardiology, Vol.       ,
+    No. 3, pp.E1-E211, 2004.
+The End
+
